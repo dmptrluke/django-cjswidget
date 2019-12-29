@@ -1,0 +1,4 @@
+include LICENSE
+include README.md
+include cjswidget/static/cjswidget/*
+include cjswidget/templates/cjswidget/*

@@ -1,5 +1,6 @@
 {% include 'django/forms/widgets/select.html' %}
-
+{{ options | json_script:options_id }}
 <script nonce="{{ csp_nonce }}" type="text/javascript">
-  const {{ widget.name }}_choices = new Choices(document.getElementById('{{ widget.attrs.id }}'));
+    const {{ widget.name }}_options = JSON.parse(document.getElementById('{{ options_id }}').textContent);
+    const {{ widget.name }}_choices = new Choices(document.getElementById('{{ widget.attrs.id }}'), {{ widget.name }}_options);
 </script>

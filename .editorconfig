@@ -1,0 +1,16 @@
+root = true
+
+[*]
+charset = utf-8
+indent_size = 4
+insert_final_newline = true
+
+[*.py]
+indent_style = space
+
+[*.{scss, css}]
+indent_style = tab
+
+[*.yml]
+indent_style = space
+indent_size = 2

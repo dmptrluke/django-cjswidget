@@ -21,11 +21,14 @@ author = "Luke Rogers"
 author-email = "luke@dmptr.com"
 home-page = "https://github.com/dmptrluke/django-cjswidget"
 requires-python=">=3.6"
+requires = [
+    'shortuuid'
+]
 
 [tool.isort]
 line_length = 100
 skip_glob = "*/node_modules/*,*/.tox/*,*/.git/*"
 balanced_wrapping = true
-known_third_party = []
+known_third_party = ["shortuuid"]
 known_django = ["django"]
 sections = ["FUTURE","STDLIB","DJANGO","THIRDPARTY","FIRSTPARTY","LOCALFOLDER"]

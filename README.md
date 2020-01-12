@@ -1,13 +1,37 @@
 # django-cjswidget  [![PyPI](https://img.shields.io/pypi/v/django-cjswidget)](https://pypi.org/project/django-cjswidget/)
+A replacement for the Select widget with fancy new features - powered by 
+[choices.js](https://github.com/jshjohnson/Choices)!
 
-choices.js widget for Django
+## Install
 
+1.  Add "cjswidget" to your `INSTALLED_APPS`:
+```python
+INSTALLED_APPS = [
+    ...
+    'cjswidget',
+]
+```
+
+## Use
+Use in place of a normal select widget, that's all!
+```python
+from cjswidget.widgets import CJSWidget
+
+class MyForm(ModelForm):
+    class Meta:
+        model = Profile
+        fields = ('country', 'region')
+        widgets = {
+            'country': CJSWidget(),
+            'region': CJSWidget(options={'shouldSort': False}),
+        }
+```
 
 ## License
 
 This software is released under the MIT license.
 ```
-Copyright (c) 2019 Luke Rogers
+Copyright (c) 2019-2020 Luke Rogers
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

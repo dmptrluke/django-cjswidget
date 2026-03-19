@@ -18,19 +18,15 @@ class CJSWidget(widgets.Select):
 
     def get_context(self, *args):
         context = super().get_context(*args)
-        context.update({
-            'options': self.options,
-            'options_id': self.options_id,
-        })
+        context.update(
+            {
+                'options': self.options,
+                'options_id': self.options_id,
+            }
+        )
         return context
 
     class Media:
-        js = (
-            'cjswidget/choices.min.js',
-        )
+        js = ('cjswidget/choices.min.js',)
 
-        css = {
-            'all': (
-                'cjswidget/choices.min.css',
-            )
-        }
+        css = {'all': ('cjswidget/choices.min.css',)}
